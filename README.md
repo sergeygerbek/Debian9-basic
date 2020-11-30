@@ -1,4 +1,4 @@
-# Debian9-basic-install
+# Debian9-basic
 
 1. Update Debian 9
 2. Sets up username & password given by the variables: $SUUSER:$SUPASSWORD
