@@ -25,11 +25,18 @@ sed -i -e "s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/ssh
 sed -i -e "s/#PasswordAuthentication no/PasswordAuthentication no/" /etc/ssh/sshd_config
 systemctl restart sshd
 
-#SETUP fail2ban
+#INSTALL&CONFIGURE fail2ban
 apt-get -o Acquire::ForceIPv4=true install -y fail2ban
 cd /etc/fail2ban && cp fail2ban.conf fail2ban.local && cp jail.conf jail.local
 systemctl enable fail2ban
 systemctl start fail2ban
 
+#INSTALL&CONFIGURE UFW
+apt-get install -y ufw
+ufw default allow outgoing
+ufw default deny incoming
+ufw allow ssh
+systemctl start ufw
+systemctl enable ufw
 
 (sleep 5; reboot) &
