@@ -2,7 +2,7 @@
 
 1. Update Debian 9
 2. Sets up username & password given by the variables: $SUUSER:$SUPASSWORD
-3. Sets SSH key for root and new user
+3. Sets SSH key for root and new user given by variable: $SUPUBKEY
 4. Turns off SSH login with password
 5. Turns off SSH login as root
 6. Installs fail2ban
