@@ -32,7 +32,7 @@ systemctl enable fail2ban
 systemctl start fail2ban
 
 #INSTALL&CONFIGURE UFW
-apt-get install -y ufw
+apt-get -o Acquire::ForceIPv4=true install -y ufw
 ufw default allow outgoing
 ufw default deny incoming
 ufw allow ssh
